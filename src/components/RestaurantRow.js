@@ -10,6 +10,8 @@ const RestaurantRow = ({restaurant, index}) => {
     setShowInfo(!showInfo);
   };
 
+  console.log('restaurant: ', restaurant);
+
   return (
     <View
       key={restaurant.name}
