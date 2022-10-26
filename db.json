@@ -1,5 +1,5 @@
 {
-"restaurants": [
+  "restaurants": [
     {"id": 1, "name": "React Cafe", "address": "123 Anywhere St", "image": "circle.png", "rating": 5},
     {"id": 2, "name": "Fancy Restaurant", "address": "799 Main St", "image": "square.png", "rating": 3.5},
     {"id": 3, "name": "Taco Place", "address": "550 Maple Rd", "image": "star.png", "rating": 4.5},
@@ -20,5 +20,5 @@
     {"id": 18, "name": "Coffee Central", "address": "3228 Oakwood Circle", "image": "square.png", "rating": 4.5},
     {"id": 19, "name": "King's Garden", "address": "2935 Victoria Ct", "image": "star.png", "rating": 5},
     {"id": 20, "name": "Salads and More", "address": "2454 Preston St", "image": "triangle.png", "rating": 2},
- ],
+  ],
 }
