@@ -1,7 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/react-in-jsx-scope */
 import {useState} from 'react';
-import {View, Text, StyleSheet, TouchableHighlight} from 'react-native';
+import {View, Text, StyleSheet, TouchableHighlight, Image} from 'react-native';
+
+// import Icon from 'react-native-vector-icons';
 
 const RestaurantRow = ({restaurant, index}) => {
   const [showInfo, setShowInfo] = useState(false);
@@ -10,7 +12,7 @@ const RestaurantRow = ({restaurant, index}) => {
     setShowInfo(!showInfo);
   };
 
-  console.log('restaurant: ', restaurant);
+  // console.log('icon: ', Icon);
 
   return (
     <View
@@ -37,6 +39,7 @@ const RestaurantRow = ({restaurant, index}) => {
       {showInfo && (
         <View style={styles.info}>
           <Text>Restaurant Info</Text>
+          <Image style={{width: 250, height: 50}} />
         </View>
       )}
     </View>
