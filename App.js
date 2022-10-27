@@ -1,23 +1,29 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
-import {View, StyleSheet, TextInput, FlatList} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, StyleSheet, TextInput, FlatList, Image} from 'react-native';
 
 import Header from 'components/Header';
 import RestaurantRow from 'components/RestaurantRow';
+import PizzaImage from 'images/pizza.png';
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState(null);
   const [restaurants, setRestaurants] = useState([]);
 
-  //  componentDidMount () {
-  //     fetch('http://localhost:3000/restaurants')
-  //       .then(response => response.json())
-  //       .then(result => setRestaurants({restaurants: result}));
-  //   };
+  useEffect(() => {
+    fetch(
+      'https://my-json-server.typicode.com/markbolier/restaurant-review/restaurants',
+    )
+      .then(response => response.json())
+      .then(result => setRestaurants(result));
+  }, []);
 
   return (
     <>
       <View style={{flex: 1}}>
+        <View style={{marginTop: 50, alignItems: 'center'}}>
+          <Image source={PizzaImage} />
+        </View>
         <Header />
         <TextInput
           style={styles.input}
