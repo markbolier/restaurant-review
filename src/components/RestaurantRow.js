@@ -19,7 +19,11 @@ const RestaurantRow = ({restaurant, index, navigation}) => {
         </View>
         <View style={styles.edges}>
           <TouchableHighlight
-            onPress={() => navigation.navigate('Restaurant Info')}
+            onPress={() =>
+              navigation.navigate('Restaurant Info', {
+                place: restaurant,
+              })
+            }
             style={styles.button}
             underlayColor="#5398DC">
             <Text style={styles.buttonText}>Info</Text>
