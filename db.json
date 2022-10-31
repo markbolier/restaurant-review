@@ -21,5 +21,6 @@
     {"id": 19, "name": "King's Garden", "address": "2935 Victoria Ct", "image": "star.png", "rating": 5},
     {"id": 20, "name": "Salads and More", "address": "2454 Preston St", "image": "triangle.png", "rating": 2}
   ],
-  "reviews": [],
+  "reviews": [
+  ],
 }
