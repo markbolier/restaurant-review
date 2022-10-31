@@ -5,6 +5,7 @@ import {faList} from '@fortawesome/free-solid-svg-icons/faList';
 import {faUtensils} from '@fortawesome/free-solid-svg-icons/faUtensils';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {NavigationContainer} from '@react-navigation/native';
+import SplashScreen from 'react-native-splash-screen';
 
 import About from 'components/About';
 import AddReview from 'components/AddReview';
@@ -70,7 +71,7 @@ export const Tabs = () => {
   );
 };
 
-const Navigation = () => {
+const ModalNav = () => {
   return (
     <NavigationContainer>
       <RootStack.Navigator>
@@ -89,4 +90,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default ModalNav;

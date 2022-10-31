@@ -7,7 +7,7 @@ import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {faStarHalf} from '@fortawesome/free-solid-svg-icons/faStarHalf';
 
 const Stars = ({rating}) => {
-  const stars = [...Array(Math.ceil(rating))];
+  const stars = [...Array(rating)];
 
   return (
     <View style={{flexDirection: 'row'}}>
