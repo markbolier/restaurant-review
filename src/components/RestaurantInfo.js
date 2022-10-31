@@ -11,8 +11,12 @@ import {
 import Stars from 'components/Stars';
 import FoodImage from 'images/food.jpg';
 
-const RestaurantInfo = ({route}) => {
+const RestaurantInfo = ({route, navigation}) => {
   const {place} = route.params;
+
+  const addReview = () => {
+    navigation.navigate('AddReview');
+  };
   return (
     <>
       <ScrollView style={styles.root}>
@@ -22,7 +26,7 @@ const RestaurantInfo = ({route}) => {
             <Text style={styles.name}>{place.name}</Text>
             <Text style={styles.address}>{place.address}</Text>
             <Stars rating={place.rating} />
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={addReview}>
               <Text style={styles.buttonText}>Add Review</Text>
             </TouchableOpacity>
           </View>

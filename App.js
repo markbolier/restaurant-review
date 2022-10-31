@@ -1,53 +1,19 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {faList} from '@fortawesome/free-solid-svg-icons/faList';
 import {faUtensils} from '@fortawesome/free-solid-svg-icons/faUtensils';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {NavigationContainer} from '@react-navigation/native';
 
-import RestaurantList from 'components/RestaurantList';
-import RestaurantInfo from 'components/RestaurantInfo';
 import About from 'components/About';
+import AddReview from 'components/AddReview';
+import RestaurantInfo from 'components/RestaurantInfo';
+import RestaurantList from 'components/RestaurantList';
 
+const RootStack = createNativeStackNavigator();
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={{
-          tabBarInactiveTintColor: 'grey',
-          tabBarActiveTintColor: '#0066CC',
-          tabBarActiveBackgroundColor: '#E6F0FA',
-        }}>
-        <Tab.Screen
-          options={{
-            headerShown: false,
-            tabBarIcon: ({color}) => (
-              <FontAwesomeIcon icon={faList} size={22} color={color} />
-            ),
-          }}
-          name="List"
-          component={List}
-        />
-        <Tab.Screen
-          options={{
-            headerShown: false,
-            tabBarIcon: ({color}) => (
-              <FontAwesomeIcon icon={faUtensils} size={22} color={color} />
-            ),
-          }}
-          name="About"
-          component={About}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
-};
-
-export default App;
 
 export const List = () => {
   return (
@@ -71,3 +37,56 @@ export const List = () => {
     </Stack.Navigator>
   );
 };
+
+export const Tabs = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        tabBarInactiveTintColor: 'grey',
+        tabBarActiveTintColor: '#0066CC',
+        tabBarActiveBackgroundColor: '#E6F0FA',
+      }}>
+      <Tab.Screen
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color}) => (
+            <FontAwesomeIcon icon={faList} size={22} color={color} />
+          ),
+        }}
+        name="List"
+        component={List}
+      />
+      <Tab.Screen
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color}) => (
+            <FontAwesomeIcon icon={faUtensils} size={22} color={color} />
+          ),
+        }}
+        name="About"
+        component={About}
+      />
+    </Tab.Navigator>
+  );
+};
+
+const Navigation = () => {
+  return (
+    <NavigationContainer>
+      <RootStack.Navigator>
+        <RootStack.Screen
+          options={{headerShown: false}}
+          name="Tabs"
+          component={Tabs}
+        />
+        <RootStack.Screen
+          options={{headerShown: false, presentation: 'modal'}}
+          name="AddReview"
+          component={AddReview}
+        />
+      </RootStack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default Navigation;
